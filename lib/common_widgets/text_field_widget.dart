@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:resume_builder/common_widgets/text_widget.dart';
 
@@ -30,7 +32,7 @@ class TextFieldWidget
   Widget build(
       BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 18),
+      margin: const EdgeInsets.only(bottom: 18),
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         // crossAxisAlignment: CrossAxisAlignment.end,
