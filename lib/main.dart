@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: SplashScreen(),
       title: 'Resume Builder App',
-      initialRoute: '/resumeWorkspace',
+      initialRoute: '/splashScreen',
       onGenerateRoute: RoutingSettings.routes,
     );
   }

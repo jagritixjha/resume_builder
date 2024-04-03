@@ -26,7 +26,7 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
         return SafeArea(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            children: [
               ListTile(
                 contentPadding: const EdgeInsets.only(top: 16, left: 16),
                 leading: const Icon(Icons.photo_library_outlined),
@@ -62,11 +62,6 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
         setState(() {});
       }
     }
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   @override

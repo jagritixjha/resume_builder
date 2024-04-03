@@ -5,13 +5,10 @@ import 'package:resume_builder/views/resume_workspace.dart';
 import 'package:resume_builder/views/splash_screen.dart';
 
 class RoutingSettings {
-  static Route<dynamic>?
-      routes(RouteSettings settings) {
+  static Route<dynamic>? routes(RouteSettings settings) {
     // ignore: unused_local_variable
-    var args =
-        settings.arguments;
-    switch (
-        settings.name) {
+    var args = settings.arguments;
+    switch (settings.name) {
       case '/splashScreen':
         return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
@@ -24,7 +21,7 @@ class RoutingSettings {
         return MaterialPageRoute(
           builder: (context) => const BuildOptionsScreen(),
         );
-      case '/resumeWorkspace':
+      case '/contactInfoScreen':
         return MaterialPageRoute(
           builder: (context) => const ResumeWorkspace(),
         );

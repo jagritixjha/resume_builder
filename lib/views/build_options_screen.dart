@@ -13,47 +13,58 @@ class _BuildOptionsScreenState extends State<BuildOptionsScreen> {
   List<Map<String, dynamic>> buildOptions = [
     {
       'icon': Icons.quick_contacts_dialer_outlined,
-      'title': 'Contact Information'
+      'title': 'Contact Information',
+      'routeTo': '/contactInfoScreen'
     },
     {
       'icon': Icons.cases_outlined,
       'title': 'Career Objectives',
+      'routeTo': '/careerObjectivesScreen'
     },
     {
       'icon': Icons.person_outline_rounded,
       'title': 'Personal Details',
+      'routeTo': '/personalDetailsScreen'
     },
     {
       'icon': Icons.school_outlined,
       'title': 'Education',
+      'routeTo': '/eductionScreen'
     },
     {
       'icon': Icons.military_tech_outlined,
       'title': 'Technical Skills',
+      'routeTo': '/technicalSkillsScreen'
     },
     {
       'icon': Icons.work_history_outlined,
       'title': 'Experiences',
+      'routeTo': '/ExperiencesScreen'
     },
     {
       'icon': Icons.interests_outlined,
       'title': 'Interests/Hobbies',
+      'routeTo': '/InterestsHobbiesScreen'
     },
     {
       'icon': Icons.assessment_outlined,
       'title': 'Projects',
+      'routeTo': '/ProjectsScreen'
     },
     {
       'icon': Icons.workspace_premium_outlined,
       'title': 'Achievements',
+      'routeTo': '/AchievementsScreen'
     },
     {
       'icon': Icons.people_outline,
       'title': 'References',
+      'routeTo': '/ReferencesScreen'
     },
     {
       'icon': Icons.data_object_rounded,
       'title': 'Declarations',
+      'routeTo': '/DeclarationsScreen'
     },
   ];
 
@@ -84,7 +95,7 @@ class _BuildOptionsScreenState extends State<BuildOptionsScreen> {
             final option = buildOptions[index];
             return GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/resumeWorkspace');
+                Navigator.pushNamed(context, option['routeTo']);
               },
               child: Container(
                 height: 80,
