@@ -3,6 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:pdf/pdf.dart%20';
+import 'package:pdf/widgets.dart' as pw;
 import 'package:resume_builder/common_widgets/app_bar.dart';
 import 'package:resume_builder/common_widgets/tab_widget.dart';
 import 'package:resume_builder/common_widgets/text_field_widget.dart';
@@ -62,6 +65,24 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
         setState(() {});
       }
     }
+  }
+
+  pdfCreation() async {
+    final pdf = pw.Document();
+    pdf.addPage(
+      pw.Page(
+        build: (pw.Context context) {
+          return pw.Center(
+            child: pw.Text('Hello my self ${GlobalVars.globals.name}.'),
+          );
+        },
+        pageFormat: PdfPageFormat.a4,
+      ),
+    );
+    final directory = await getApplicationDocumentsDirectory();
+    final file = File('${directory.path}/resume.pdf');
+    await file.writeAsBytes(await pdf.save());
+    print(directory.path);
   }
 
   @override
@@ -374,6 +395,27 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
                   ),
                   child: TextWidget(
                     title: 'Submit',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    pdfCreation();
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    backgroundColor: primaryColor,
+                    fixedSize: const Size(342, 50),
+                    shadowColor: Colors.blue.shade50,
+                    elevation: 6,
+                  ),
+                  child: TextWidget(
+                    title: 'Download pdf',
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                     color: Colors.white,
