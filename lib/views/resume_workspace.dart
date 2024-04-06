@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
     final directory = await getApplicationDocumentsDirectory();
     final file = File('${directory.path}/resume.pdf');
     await file.writeAsBytes(await pdf.save());
-    print(directory.path);
+    log(directory.path);
   }
 
   @override

@@ -88,50 +88,54 @@ class _BuildOptionsScreenState extends State<BuildOptionsScreen> {
           ),
         ),
       ),
-      body: Expanded(
-        child: ListView.builder(
-          itemCount: buildOptions.length,
-          itemBuilder: (context, index) {
-            final option = buildOptions[index];
-            return GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, option['routeTo']);
-              },
-              child: Container(
-                height: 80,
-                width: double.infinity,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                    offset: const Offset(0, 4),
-                    color: Colors.grey.shade200,
-                    blurRadius: 8,
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: buildOptions.length,
+              itemBuilder: (context, index) {
+                final option = buildOptions[index];
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, option['routeTo']);
+                  },
+                  child: Container(
+                    height: 80,
+                    width: double.infinity,
+                    margin: const EdgeInsets.symmetric(vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                      BoxShadow(
+                        offset: const Offset(0, 4),
+                        color: Colors.grey.shade200,
+                        blurRadius: 8,
+                      ),
+                    ]),
+                    child: Row(
+                      children: [
+                        Icon(
+                          option['icon'],
+                          size: 34,
+                          color: Colors.black54,
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        TextWidget(
+                            title: option['title'],
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                        const Spacer(),
+                        const Icon(Icons.arrow_forward_ios_rounded),
+                      ],
+                    ),
                   ),
-                ]),
-                child: Row(
-                  children: [
-                    Icon(
-                      option['icon'],
-                      size: 34,
-                      color: Colors.black54,
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    TextWidget(
-                        title: option['title'],
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
-                    const Spacer(),
-                    const Icon(Icons.arrow_forward_ios_rounded),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
