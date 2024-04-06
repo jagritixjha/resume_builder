@@ -5,18 +5,11 @@ import 'package:resume_builder/common_widgets/text_widget.dart';
 
 import '../utils/global_variables.dart';
 
-class TextFieldWidget
-    extends StatelessWidget {
-  IconData?
-      icon;
-  String?
-      hint,
-      labelText,
-      validatorVariable;
-  String? Function(String?)?
-      validatorFunc;
-  void Function(String?)?
-      saveData;
+class TextFieldWidget extends StatelessWidget {
+  IconData? icon;
+  String? hint, labelText, validatorVariable;
+  String? Function(String?)? validatorFunc;
+  void Function(String?)? saveData;
 
   TextFieldWidget({
     super.key,
@@ -29,13 +22,10 @@ class TextFieldWidget
   });
 
   @override
-  Widget build(
-      BuildContext context) {
+  Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 18),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        // crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Icon(
             icon,

@@ -13,14 +13,14 @@ import 'package:resume_builder/common_widgets/text_field_widget.dart';
 import 'package:resume_builder/common_widgets/text_widget.dart';
 import 'package:resume_builder/utils/global_variables.dart';
 
-class ResumeWorkspace extends StatefulWidget {
-  const ResumeWorkspace({super.key});
+class ContactInfoScreen extends StatefulWidget {
+  const ContactInfoScreen({super.key});
 
   @override
-  State<ResumeWorkspace> createState() => _ResumeWorkspaceState();
+  State<ContactInfoScreen> createState() => _ContactInfoScreenState();
 }
 
-class _ResumeWorkspaceState extends State<ResumeWorkspace> {
+class _ContactInfoScreenState extends State<ContactInfoScreen> {
   final _formKey = GlobalKey<FormState>();
 
   Future<void> _pickImage() async {
@@ -236,7 +236,7 @@ class _ResumeWorkspaceState extends State<ResumeWorkspace> {
                                   _formKey.currentState!.reset();
                                 },
                                 child: TextWidget(
-                                  title: 'Rest',
+                                  title: 'Reset',
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
                                   color: primaryColor,

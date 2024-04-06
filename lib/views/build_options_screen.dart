@@ -32,14 +32,14 @@ class _BuildOptionsScreenState extends State<BuildOptionsScreen> {
       'routeTo': '/eductionScreen'
     },
     {
-      'icon': Icons.military_tech_outlined,
-      'title': 'Technical Skills',
-      'routeTo': '/technicalSkillsScreen'
-    },
-    {
       'icon': Icons.work_history_outlined,
       'title': 'Experiences',
       'routeTo': '/ExperiencesScreen'
+    },
+    {
+      'icon': Icons.military_tech_outlined,
+      'title': 'Technical Skills',
+      'routeTo': '/technicalSkillsScreen'
     },
     {
       'icon': Icons.interests_outlined,

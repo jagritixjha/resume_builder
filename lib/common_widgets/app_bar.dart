@@ -4,29 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:resume_builder/common_widgets/text_widget.dart';
 import 'package:resume_builder/utils/global_variables.dart';
 
-class CustomAppBar
-    extends AppBar {
-  String?
-      titleText;
-  bool?
-      isPop;
-  PreferredSizeWidget?
-      customWidget;
+class CustomAppBar extends AppBar {
+  String? titleText;
+  bool? isPop;
+  PreferredSizeWidget? customWidget;
+  double? fontSizee;
 
-  CustomAppBar(
-      {super.key});
+  CustomAppBar({super.key});
 
-  static appBar({
-    required BuildContext
-        context,
-    required titleText,
-    required isPop,
-    required customWidget,
-  }) {
+  static appBar(
+      {required BuildContext context,
+      required titleText,
+      required isPop,
+      required customWidget,
+      fontSizee}) {
     return AppBar(
       title: TextWidget(
         title: titleText,
-        fontSize: 24,
+        fontSize: fontSizee ?? 24,
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:resume_builder/views/build_options_screen.dart';
+import 'package:resume_builder/views/carrier_objectives_screen.dart';
+import 'package:resume_builder/views/contact_info_screen.dart';
 import 'package:resume_builder/views/home_screen.dart';
-import 'package:resume_builder/views/resume_workspace.dart';
 import 'package:resume_builder/views/splash_screen.dart';
 
 class RoutingSettings {
@@ -23,7 +24,11 @@ class RoutingSettings {
         );
       case '/contactInfoScreen':
         return MaterialPageRoute(
-          builder: (context) => const ResumeWorkspace(),
+          builder: (context) => const ContactInfoScreen(),
+        );
+      case '/careerObjectivesScreen':
+        return MaterialPageRoute(
+          builder: (context) => const CarrierObjectives(),
         );
       default:
         return null;
