@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pdf/pdf.dart%20';
+import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:resume_builder/common_widgets/app_bar.dart';
 import 'package:resume_builder/common_widgets/tab_widget.dart';
@@ -376,14 +376,6 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       backgroundColor: Colors.red,
                       fontSize: 20,
                     );
-                    // ScaffoldMessenger.of(context).showSnackBar(
-                    //   SnackBar(
-                    //     content: Text(
-                    //       validation ? 'Form saved' : 'Please enter the required field.',
-                    //     ),
-                    //   ),
-                    // );
-                    // print(GlobalVars.globals.name);
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
